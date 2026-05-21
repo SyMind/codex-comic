@@ -1,0 +1,23 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  skill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Compile scripts
+        run: python -m py_compile scripts/init_comic_project.py
+      - name: Smoke test project initialization
+        run: |
+          tmpdir="$(mktemp -d)"
+          python scripts/init_comic_project.py "$tmpdir/out" --title "Validation Comic"
+          test -f "$tmpdir/out/manifest.json"
+          test -d "$tmpdir/out/prompts/pages"
+          grep -q "页面编号" "$tmpdir/out/bible/style.md"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "漫画工作流"
+  short_description: "创作漫画脚本、设定图和页面"
+  default_prompt: "使用 $comic-workflow 根据我的创意创作一部短篇漫画，并把所有输出保存到 ./output。"
