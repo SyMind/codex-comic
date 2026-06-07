@@ -18,22 +18,22 @@
 
 告诉你的 agent：
 
-> Install the `comic-workflow` skill from `github.com/<owner>/<repo>`.
+> Install the `comic-workflow` skill from `github.com/SyMind/codex-comic`.
 
 或者直接运行安装命令：
 
 ```bash
 # 项目级安装
-npx skills add <owner>/<repo>
+npx skills add SyMind/codex-comic
 
 # 全局安装
-npx skills add <owner>/<repo> -g
+npx skills add SyMind/codex-comic -g
 ```
 
 也可以手动克隆到 Codex skills 目录：
 
 ```bash
-git clone https://github.com/<owner>/<repo> ~/.codex/skills/comic-workflow
+git clone https://github.com/SyMind/codex-comic.git ~/.codex/skills/comic-workflow
 ```
 
 安装后，通过 `$comic-workflow` 调用。
