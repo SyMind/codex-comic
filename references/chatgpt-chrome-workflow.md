@@ -1,10 +1,16 @@
-# ChatGPT Chrome 工作流
+# ChatGPT Computer Use 工作流
 
 仅在生成或下载图片时阅读。
 
+## 前置
+
+- 使用 Codex 的 Computer Use skill 操作本机 Chrome/ChatGPT UI。
+- 开始前确认 Computer Use 可用，并按其确认策略处理登录、上传、下载、权限弹窗和第三方传输。
+- 不要用本地图片生成、网页抓取或 shell 自动化代替 ChatGPT UI 生成。
+
 ## 生成
 
-1. 用 Codex Chrome 插件打开 `https://chatgpt.com/`。
+1. 用 Computer Use 打开或切换到本机 Chrome，并进入 `https://chatgpt.com/`。
 2. 每个角色、场景、漫画页默认新开会话。最终漫画页生成时，优先同时打开多个新的 ChatGPT 会话并发推进；每个会话只处理一页，避免在同一对话连续生成多页。
 3. 设定图：提交 `prompts/concepts/` 中对应提示词，必要时只按设定做局部修正。
 4. 漫画页：先上传相关参考图，再提交 `prompts/pages/page-XX.md`；提示词必须说明每张附件的用途，并明确画面内不要页码、页脚页码、角标编号或 `Page XX`/`第 XX 页` 字样。
@@ -13,7 +19,7 @@
 ## 下载
 
 1. 如控件隐藏，先悬停或聚焦图片。
-2. 点击分享图片按钮，优先使用：
+2. 点击分享图片按钮。若 Computer Use 可以读取控件属性，优先寻找：
 
 ```css
 button[aria-label="分享此图片"]

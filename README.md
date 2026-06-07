@@ -2,6 +2,8 @@
 
 这个仓库提供一个 Codex skill：`comic-workflow`。它会根据用户创意制作 3:4 竖版中文手绘教育漫画，并把脚本、设定、提示词、生成图片和清单整理到用户指定目录。
 
+图片生成阶段需要 Codex 的 Computer Use 能力，用它操作本机 Chrome 中的 ChatGPT 网页来生成、上传参考图和下载成品图。当前 Codex 会话如果没有启用 Computer Use，skill 会先停在图片生成阶段并提示安装或启用。
+
 ## 效果展示
 
 <p>
@@ -15,6 +17,12 @@
 </p>
 
 ## 安装
+
+### 前置条件
+
+- Codex 已启用 Computer Use 插件/技能。
+- 本机 Chrome 可以访问并登录 `https://chatgpt.com/`。
+- ChatGPT 账号具备图片生成功能。
 
 告诉你的 agent：
 
@@ -50,7 +58,7 @@ git clone https://github.com/SyMind/codex-comic.git ~/.codex/skills/comic-workfl
 
 > 根据我的课程大纲生成一部短篇条漫，先写脚本和角色设定，再生成参考图和最终页面。
 
-agent 会：拆解主题 → 编写按页脚本 → 建立角色/场景/风格设定 → 生成并保存提示词 → 在 ChatGPT 中生成参考图 → 并发生成每一页漫画 → 下载图片 → 整理 `manifest.json` 和生成记录。
+agent 会：拆解主题 → 编写按页脚本 → 建立角色/场景/风格设定 → 生成并保存提示词 → 检测 Computer Use → 用 Computer Use 操作 Chrome/ChatGPT 生成参考图 → 并发生成每一页漫画 → 下载图片 → 整理 `manifest.json` 和生成记录。
 
 ## 漫画生产工作流
 
